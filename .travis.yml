@@ -11,6 +11,7 @@ before_install:
   - chmod +x ./mvnw
 
 before_deploy:
+  - mvn package -Dspring.profiles.active=azure
   - mkdir webapps
   - cp target/ROOT.war webapps/
 
