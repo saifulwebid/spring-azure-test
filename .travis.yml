@@ -11,6 +11,10 @@ before_install:
   - chmod +x ./mvnw
   - echo "spring.profiles.active = azure" > src/main/resources/application.properties
 
+install: ./mvnw clean package
+
+script: true
+
 before_deploy:
   - mkdir webapps
   - cp target/web-0.0.1-SNAPSHOT.war webapps/ROOT.war
